@@ -1,4 +1,4 @@
-package com.algorithm.list;
+package com.algorithms.list;
 
 import java.io.IOException;
 import java.net.ServerSocket;

@@ -1,4 +1,4 @@
-package com.algorithm.arrays;
+package com.algorithms.arrays;
 
 public class KadaneAlgo {
 	
