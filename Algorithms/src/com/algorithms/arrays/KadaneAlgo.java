@@ -2,6 +2,11 @@ package com.algorithms.arrays;
 
 public class KadaneAlgo {
 	
+	/**
+	 * 
+	 * @param a
+	 * @return
+	 */
 	public static int kadane(int a[]) {
 		boolean nonneg = false;
 		for(int i : a) {
