@@ -41,8 +41,28 @@ public class PriorityQueue<T extends Comparable<T>> {
 		count++;
 	}
 	
-	public void remove(T val) {
+	public void removeMax() {
+		if(count == 1) {
+			queue[1] = null;
+			return;
+		}
 		
+		queue[1] = queue[count -1];
+		queue[count -1] = null;
+		count--;
+		int index = 1;
+	
+		while((index*2 < count) && (queue[index].compareTo(queue[index*2]) < 0 || queue[index].compareTo(queue[index*2+1]) < 0)) {
+			
+			if(queue[index*2] != null && queue[index*2+1] != null) {
+				int swapIndex = queue[index*2].compareTo(queue[index*2+1]) > 0 ? index*2 : (index*2)+1;
+				T temp = queue[index];
+				queue[index] = queue[swapIndex];
+				queue[swapIndex] = temp;
+				index = swapIndex;
+			}
+		}
+	
 	}
 	
 	public boolean isHeap(int index) {
@@ -55,16 +75,12 @@ public class PriorityQueue<T extends Comparable<T>> {
 		return true;
 	}
 	
-	public void sort() {
-		Arrays.sort(queue);
-		System.out.println("");
-	}
-	
 
 	public static void main(String[] args) {
 		List<Integer> list = new ArrayList<>();
-		PriorityQueue<Integer> pq = new PriorityQueue<>(Integer.class, 10000);
-		for(int i=0; i < 10000-2; i++) {
+		int size = 10000;
+		PriorityQueue<Integer> pq = new PriorityQueue<>(Integer.class, size);
+		for(int i=0; i < size-2; i++) {
 			int val = ThreadLocalRandom.current().nextInt(1,100000);
 			pq.add(val);
 			list.add(val);
@@ -77,6 +93,11 @@ public class PriorityQueue<T extends Comparable<T>> {
 		} else {
 			System.out.println("Problem with PQ");
 		}
+		
+		pq.removeMax();
+		System.out.println(pq);
+		pq.removeMax();
+		System.out.println(pq);
 	}
 
 }
