@@ -110,9 +110,9 @@ public class LetterCombinations {
 		return new String(chars);
 	}
 
-	public static void bt(String digits, int startIndex, List<String> values, 
+	public static void backtracking(String digits, int startIndex, List<String> values, 
 			String currentValue) {
-		//System.out.println("Calling bt");
+		System.out.println(" "+currentValue);
 		if(startIndex == digits.length()-1) {
 			// This means I have reached the last part
 			String chars = map.get(digits.charAt(startIndex));
@@ -125,7 +125,7 @@ public class LetterCombinations {
 		} else {
 			String chars = map.get(digits.charAt(startIndex));
 			for(int i=0; i < chars.length(); i++) {
-				bt(digits, startIndex+1, values, currentValue + chars.charAt(i));
+				backtracking(digits, startIndex+1, values, currentValue + chars.charAt(i));
 			}
 		}
 
@@ -135,10 +135,10 @@ public class LetterCombinations {
 		//System.out.println(rev("Amit"));
 		// System.out.println(LetterCombinations.letterCombinationItr("234"));
 		List<String> l = new ArrayList<>();
-		System.out.println(LetterCombinations.letterCombos("23456789",0,"", l));
+		//System.out.println(LetterCombinations.letterCombos("23456789",0,"", l));
 		//System.out.println(letterCombos("23456789", 0, "", new ArrayList<String>()));
 		List<String> values = new ArrayList<>();
-		LetterCombinations.bt("23456789", 0, values, "");
+		LetterCombinations.backtracking("234", 0, values, "");
 		System.out.println(values);
 	}
 }

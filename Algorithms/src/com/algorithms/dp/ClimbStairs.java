@@ -43,7 +43,7 @@ public class ClimbStairs {
 		}
 	}
 	public static void main(String[] args) {
-		int value = 4;
+		int value = 3;
 		long start = System.currentTimeMillis();
 		System.out.println(stairs(value));
 		System.out.println("Time taken recursive algo " + (System.currentTimeMillis() - start));
