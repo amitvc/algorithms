@@ -20,6 +20,25 @@ public class LetterCombinations {
 			put('9', "wxyz");
 		}
 	};
+	
+	
+	
+	// 234
+	
+	public static void letters(String number, int startIndex, String current, List<String> values) {
+
+		if(startIndex >= number.length()) {
+			values.add(current);
+			System.out.println(current);
+		} else {
+			String digitCode = map.get(number.charAt(startIndex));
+			for(int i=0; i < digitCode.length(); i++) {
+				letters(number, startIndex+1, current + digitCode.charAt(i), values);
+			}
+		}
+	}
+	
+	
 
 	/**
 	 * This problem is solved using creating a tree on the fly and doing BFS. At
@@ -134,11 +153,12 @@ public class LetterCombinations {
 	public static void main(String arg[]) {
 		//System.out.println(rev("Amit"));
 		// System.out.println(LetterCombinations.letterCombinationItr("234"));
-		List<String> l = new ArrayList<>();
+		//List<String> l = new ArrayList<>();
 		//System.out.println(LetterCombinations.letterCombos("23456789",0,"", l));
 		//System.out.println(letterCombos("23456789", 0, "", new ArrayList<String>()));
 		List<String> values = new ArrayList<>();
-		LetterCombinations.backtracking("234", 0, values, "");
-		System.out.println(values);
+		letters("234", 0, "", values);
+		//LetterCombinations.backtracking("234", 0, values, "");
+		//System.out.println(values);
 	}
 }

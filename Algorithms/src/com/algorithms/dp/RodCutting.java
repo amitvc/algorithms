@@ -35,21 +35,21 @@ class RodCutting {
 		if (n <= 0)
 			return 0;
 		int max_val = Integer.MIN_VALUE;
-
 		// Recursively cut the rod in different pieces and compare different
 		// configurations
 		for (int i = 0; i < n; i++) {
 			//System.out.println("Max_Val (bf) " + max_val);
-			max_val = max(max_val, price[i] + cutRodRecurive(price, n - i - 1));
-			//System.out.println("Max_Val (af) "+ max_val);
+			int nextItr = n -i -1;
+			max_val = max(max_val, price[i] + cutRodRecurive(price, nextItr));
 		}
-		System.out.println("Max_val " + max_val + " n "+ n);
 		return max_val;
 	}
 
 	/* Driver program to test above functions */
 	public static void main(String args[]) {
-		int arr[] = new int[] { 4, 7,14};
+		int arr[] = new int[] {12,1,8};
+		int choice[] = new int[arr.length];
 		System.out.println("Maximum Obtainable Value is " + cutRodRecurive(arr, arr.length));
+		System.out.println(cutRod(arr, arr.length));
 	}
 }
