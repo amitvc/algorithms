@@ -1,4 +1,4 @@
 algorithms
 ==========
 
-Princeton algorithms 1 course work repository 
+Repository of algorithms that I wrote while I was preparing for interviews.
