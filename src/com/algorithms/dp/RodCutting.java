@@ -6,7 +6,6 @@ class RodCutting {
 		return (a > b) ? a : b;
 	}
 
-	static int count = 0;
 
 	/*
 	 * Returns the best obtainable price for a rod of length n and price[] as
@@ -31,7 +30,6 @@ class RodCutting {
 	}
 
 	static int cutRodRecursive(int price[], int n) {
-		count++;
 		if (n <= 0)
 			return 0;
 		int max_val = Integer.MIN_VALUE;
