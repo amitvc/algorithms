@@ -19,6 +19,7 @@ public class BoogleWords {
 	
 	private static void dfs(String prefix, int row, int col, boolean visited[][], char board[][]) {
         if (row < 0 || col < 0 || row >= N || col >= N) return;
+        
 
         // can't visited a cell more than once
         if (visited[row][col]) return;

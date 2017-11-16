@@ -22,10 +22,28 @@ public class PermutationString {
 			permute(prefix+postFix.charAt(i), postFix.substring(0,i) + postFix.substring(i+1), permutes);
 		}
 	}
+	
+	public static void permuteBackTracking(String s) {
+		permuteSoFar(s, "");
+	}
+	
+	public static void permuteSoFar(String originalString, String soFar) {
+		if(originalString.isEmpty()) {
+			System.out.println(soFar);
+		}
+		
+		for(int i=0;i < originalString.length(); i++) {
+			char c = originalString.charAt(i);
+			soFar +=c;
+			permuteSoFar(originalString.substring(0, i) + originalString.substring(i+1), soFar);
+			soFar = soFar.substring(0, soFar.length()-1);			
+		}
+	}
 
 	public static void main(String[] args) {
 		List<String> result = PermutationString.permute("abc");
 		System.out.println(result.toString());
+		permuteBackTracking("abc");
 	}
 
 }

@@ -35,11 +35,7 @@ public class CoinsProblem {
 		
 		for(int coin : coins) {
 			if(V - coin >= 0) {
-				res = Math.min(1+minCoins(coins, V-coin), res);
-				/*int change = minCoins(coins, V-coin);
-				if(change+1 < res) {
-					res = change+1;
-				}*/
+				res = Math.min(1+minCoins(coins, V-coin), res);				
 			}
 		}
 
@@ -118,10 +114,11 @@ public class CoinsProblem {
 	}
 
 	public static void main(String[] args) {
-		int[] coins = { 1, 3, 5 };
+		int[] coins = { 1, 5,10 };
 		int[] coins2 = { 10, 3, 2 };
 		int[] t = { 1,3,5,10,25};
-		System.out.println(minCoins(coins, 11));
+		System.out.println(minCoins(coins, 15));
+		System.out.println("BottomUpMinCoins " + minimumCoinBottomUp(15, coins));
 		System.out.println(bottomup(t, 11));
 
 	}

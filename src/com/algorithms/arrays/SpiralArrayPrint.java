@@ -9,6 +9,7 @@ import java.util.List;
 // List 2 - 7,8,9
 
 public class SpiralArrayPrint {
+	
 	// DO NOT MODIFY THE LIST
 	public ArrayList<Integer> spiralOrder(final List<List<Integer>> a) {
 		 ArrayList<Integer> result = new ArrayList<Integer>();
@@ -86,7 +87,7 @@ public class SpiralArrayPrint {
 		a.add(lr4);
 
 		SpiralArrayPrint p = new SpiralArrayPrint();
-		p.spiralOrder(a);
+		System.out.println(p.spiralOrder(a));
 		
 	}
 }

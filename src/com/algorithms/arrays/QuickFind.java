@@ -66,7 +66,6 @@ public class QuickFind implements Connectivity {
 		c.union(5,7);
 		c.union(7,0);
 		
-		
 		System.out.println(c.connected(1,7));
 	}
 
