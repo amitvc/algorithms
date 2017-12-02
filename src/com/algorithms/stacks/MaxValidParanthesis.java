@@ -16,9 +16,9 @@ public class MaxValidParanthesis {
 				if(!stack.isEmpty()) {
 					stack.pop();
 					currentMax += 2;
-				} else {
+				} /*else {
 					currentMax = 0;
-				}
+				}*/
 				lastMax = Math.max(lastMax, currentMax);
 			}
 		}
