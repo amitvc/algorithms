@@ -16,7 +16,7 @@ public class MaxSumNonAdj {
 	
 	
 	public static void main(String[] args) {
-		int[] arr = {1, 12, 3, 9, 2,21};
+		int[] arr = {5, 5, 10, 100, 10, 5};
 		int a = maxSum(arr, arr.length-1);
 		System.out.println(a);
 	}

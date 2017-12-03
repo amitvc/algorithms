@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Class represents a basic undirected graph as adjency list.
+ * 
  * @author amit
  *
  */
@@ -68,5 +69,4 @@ public class Graph {
 		g.test();
 		
 	}
-
 }
