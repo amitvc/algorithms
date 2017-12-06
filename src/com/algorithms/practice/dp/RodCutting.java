@@ -33,21 +33,22 @@ public class RodCutting {
 	}
 
 	public static int maxRodCuttingBU(int N, int profit[]) {
-		int dp[] = new int[N + 1];
+		int maxProfit[] = new int[N + 1];
+		
 		for (int i = 1; i <= N; i++) {
 			int max_val = Integer.MIN_VALUE;
 			for (int j = 0; j < i; j++) {
-				max_val = Math.max(max_val, profit[j] + dp[i - j - 1]);
+				max_val = Math.max(max_val, profit[j] + maxProfit[i - j - 1]);
 			}
-			dp[i] = max_val;
+			maxProfit[i] = max_val;
 		}
-		return dp[N];
+		return maxProfit[N];
 	}
 
 	public static void main(String[] args) {
-		int profit[] = { 3, 2, 6 };
-		System.out.println(maxProfitRecursive(3, profit));
-		System.out.println(maxRodCuttingBU(3, profit));
+		int profit[] = { 5,2 };
+		System.out.println(maxProfitRecursive(profit.length, profit));
+		System.out.println(maxRodCuttingBU(profit.length, profit));
 
 	}
 
