@@ -21,7 +21,7 @@ public class SubstringNonRepeating {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		lengthOfLongestSubstring("pwwkewj");
+		System.out.println(lengthOfLongestSubstring("pwwkewj"));
 		
 
 	}

@@ -18,7 +18,6 @@ public class RunLengthEncoding {
 			if(charCount > 1) {
 				sb.append(charCount);
 			}
-			
 		}
 		System.out.println(sb.toString());
 		return sb.length();
@@ -53,8 +52,5 @@ public class RunLengthEncoding {
 		// TODO Auto-generated method stub
 		RunLengthEncoding.compress1("aabccaaa".toCharArray());
 		RunLengthEncoding.compress1("abcca".toCharArray());
-
-
 	}
-
 }
