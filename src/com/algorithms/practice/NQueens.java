@@ -46,7 +46,7 @@ public class NQueens {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int size = 50;
+		int size = 4;
 		int arr[][] = new int[size][size];
 		nqueens(arr, 0);
 	}
