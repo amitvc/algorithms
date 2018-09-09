@@ -1,6 +1,8 @@
 package com.algorithms.arrays;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.PriorityQueue;
 
 public class QuickSort {
 
@@ -55,8 +57,15 @@ public class QuickSort {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] arr = {2,6,8,5,4,3};
-		qs(arr,0, arr.length-1);
+		Integer [] arr = {2,6,8,5,4,3};
+		Arrays.sort(arr, Collections.reverseOrder());
+		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+		pq.offer(5);
+		pq.offer(3);
+		pq.offer(100);
+		System.out.println("Min pq : "+ pq.poll());
+		
+		//qs(arr,0, arr.length-1);
         Arrays.stream(arr).forEach(System.out::println);
 
 	}

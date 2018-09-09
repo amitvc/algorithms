@@ -47,7 +47,7 @@ public class Queens2D {
 	}
 
 	public static void main(String[] args) {
-		int size = 8;
+		int size = 4;
 		int board[][] = new int[size][size];
 		for(int i=0; i < board.length; i++) {
 			for(int j = 0; j < board.length;j++) {

@@ -1,10 +1,18 @@
 package com.algorithms.trees;
 
-import java.util.Arrays;
-
+/**
+ * This class represents a SegmentTree for the sum of elements. It facilitates
+ * answering range queries for sums.
+ * 
+ * @author amit
+ *
+ */
 public class SegmentTreeSum {
 	
+	
 	public static void buildTree(int arr[], int sum_array[], int start, int end, int index) {
+		
+		
 		if(start == end) {
 			sum_array[index] = arr[start];
 			return;
@@ -18,13 +26,16 @@ public class SegmentTreeSum {
 	}
 	
 	public static void main(String args[]) {
+		
 		int arr[] = {1,2,3,4,5,6};
 		int sum_array[] = new int[arr.length*2+5];
 		buildTree(arr, sum_array, 0, 5, 1);
-	//	Arrays.stream(sum_array).forEach(System.out::println);
-		int b = 7;
-		int c = b & ~(1 << 0);
-		System.out.println( 1 << 2);
+		//Arrays.stream(sum_array).forEach(System.out::println);
+		int index=0;
+		for(int i : sum_array) {
+			//System.out.println("Index : " + index + " value : "+ i);
+			index++;
+		}
 	}
 
 }

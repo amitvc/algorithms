@@ -99,27 +99,25 @@ public class CoinsProblem {
 	}
 	
 	
-	public static int bottomup(int coins[], int sum) {
-		int results[] = new int[sum+1];
-		Arrays.fill(results, Integer.MAX_VALUE);
-		results[0] = 0;
-		for(int i=0; i <= sum; i++) {
-			for(int coin : coins) {
-				if(coin <= i &&  results[i-coin]  +1 < results[i]) {
-					results[i] = results[i-coin] + 1;
-				}
-			}
-		}
-		return results[results.length-1];
-	}
+	public static int change(int amount, int[] coins) {
+        int[][] dp = new int[coins.length+1][amount+1];
+        dp[0][0] = 1;
+        
+        for (int i = 1; i <= coins.length; i++) {
+            dp[i][0] = 1;
+            for (int j = 1; j <= amount; j++) {
+                dp[i][j] = dp[i-1][j] + (j >= coins[i-1] ? dp[i][j-coins[i-1]] : 0);
+            }
+        }
+        return dp[coins.length][amount];
+    }
 
 	public static void main(String[] args) {
 		int[] coins = { 1, 5,10 };
-		int[] coins2 = { 10, 3, 2 };
-		int[] t = { 1,3,5,10,25};
+		int[] coins2 = { 1, 2, 5};
 		System.out.println(minCoins(coins, 15));
-		System.out.println("BottomUpMinCoins " + minimumCoinBottomUp(15, coins));
-		System.out.println(bottomup(t, 11));
+		System.out.println("BottomUpMinCoins " + calculateMinCoins(coins, 15));
+		System.out.println(change(5,coins2));
 
 	}
 

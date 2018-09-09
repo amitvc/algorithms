@@ -24,7 +24,7 @@ public class KadaneAlgo {
 	}
 
 	public static void main(String[] args) {
-		 int a[] = {10, -9, 42, -1, -2, -1, -3, -3};
+		 int a[] = {423, -9, 10, -1, -2, -1, -3, -3};
 		System.out.println(KadaneAlgo.kadane(a));
 	}
 

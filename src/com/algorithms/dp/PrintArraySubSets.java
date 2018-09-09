@@ -30,21 +30,35 @@ public class PrintArraySubSets {
 			System.out.println("List --------> "+ list.toString());
 			return;
 		}
-		
-		printAllSubSets(arr,i+1, list);		
+		printAllSubSets(arr, i+1, list);
 		int currentElement = arr[i];
 		list.push(currentElement);		
-		printAllSubSets(arr, i+1, list);
+		printAllSubSets(arr,i+1, list);		
 		list.pop();
 	}
 	
+	private static void printAllSubSets(char[] arr, int i, Stack<Character> list) {
+		if(i == arr.length) {
+			System.out.println("List --------> "+ list.toString());
+			return;
+		}
+		printAllSubSets(arr, i+1, list);
+		char currentElement = arr[i];
+		list.push(currentElement);		
+		printAllSubSets(arr,i+1, list);		
+		list.pop();
+	}
 	
-
+	public static void printAllSubSets(char arr[]) {
+		printAllSubSets(arr,0, new Stack<>());
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = {1,2,3,4};
+		int arr[] = {1,2,3};
+		char arrc[] = {'a', 'b','c'};
 		printAllSubSets(arr);
-
+		printAllSubSets(arrc);
 	}
 
 }

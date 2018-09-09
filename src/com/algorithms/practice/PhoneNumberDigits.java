@@ -17,8 +17,9 @@ public class PhoneNumberDigits {
 		lookup.put('4', "ghi");
 		lookup.put('5', "jkl");
 		lookup.put('6', "mno");
-		lookup.put('7', "pqr");
-		lookup.put('8', "stu");
+		lookup.put('7', "pqrs");
+		lookup.put('8', "tuv");
+		lookup.put('9', "wxyz");
 	}
 
 	public static List<String> enumerate(String digits) {

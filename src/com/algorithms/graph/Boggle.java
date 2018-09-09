@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BoogleWords {
+public class Boggle {
 
 	
 	public static Map<String, String> dictionary = new HashMap<>();

@@ -20,10 +20,7 @@ public class SubstringNonRepeating {
     }
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println(lengthOfLongestSubstring("pwwkewj"));
-		
-
+		System.out.println(lengthOfLongestSubstring("abcadef"));
 	}
-
 }

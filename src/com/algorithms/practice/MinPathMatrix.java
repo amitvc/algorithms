@@ -19,6 +19,13 @@ public class MinPathMatrix {
 		
 		path[0][0] = source[0][0];
 		
+		/**
+		 *    a,b,c
+		 *    x,x,x
+		 *    x,x,x
+		 * 
+		 * 
+		 */
 		for(int i=1; i <= destCol; i++) {
 			path[0][i] = path[0][i-1] + source[0][i];
 		}
@@ -45,5 +52,4 @@ public class MinPathMatrix {
 		System.out.println(value);
 		System.out.println(MinPathMatrix.minPathBottomUp(source, 2, 2));
 	}
-
 }

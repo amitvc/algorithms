@@ -1,5 +1,8 @@
 package com.algorithms.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Class is representation of a classic binary search tree.
  * It does not guarantee balanced tree at the end of the insertion operation. 
@@ -13,29 +16,6 @@ public class BinaryTree {
 	
 	public BinaryTree() {
 		root = null;
-	}
-	
-	
-	/**
-	 * Class represents Node in binary tree
-	 * 
-	 * @author amit
-	 *
-	 */
-	public static class Node {
-		public int data;
-		public Node left;
-		public Node right;
-		
-		public Node(int data) {
-			this.data = data;
-		}
-
-		public Node(int data, Node left, Node right) {
-			this.data = data;
-			this.left = left;
-			this.right = right;
-		}
 	}
 	
 	
@@ -122,6 +102,42 @@ public class BinaryTree {
 		}
 		return current;
 	}
+	
+	
+	public static Node deserialize(String data) {
+        if (data == null || data.length() == 0) {
+            return null;
+        }
+        String[] parts = data.split(",");
+        Queue<Node> queue = new LinkedList<>();
+        Node root = new Node(Integer.parseInt(parts[0]));
+        queue.offer(root);
+        int i = 1;
+        while (i < parts.length) {
+        	Node node = queue.poll();
+
+            if (parts[i].equals("#")) {
+                node.left = null;
+            } else {
+            	Node left = new Node(Integer.parseInt(parts[i]));
+                node.left = left;
+                queue.offer(left);
+            }
+
+            if (i + 1 == parts.length) break;
+
+            if (parts[i + 1].equals("#")) {
+                node.right = null;
+            } else {
+            	Node right = new Node(Integer.parseInt(parts[i + 1]));
+                node.right = right;
+                queue.offer(right);
+            }
+            i += 2;
+        }
+        return root;
+    }
+	
 	
 	public Node root() {
 		return root;
