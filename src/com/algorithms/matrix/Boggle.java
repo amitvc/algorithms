@@ -1,7 +1,6 @@
 package com.algorithms.matrix;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,6 +13,7 @@ public class Boggle {
 	    Set<String> ans = new TreeSet<>();
 	    for(int i=0; i < rows; i++) {
 	    	for(int j=0; j < cols; j++) {
+	    		//Now we apply dfs to go and find all paths originating from here
 	    		findWords("",board, words, rows, cols, i,j, visited, ans);
 	    	}
 	    }
@@ -22,10 +22,8 @@ public class Boggle {
 	    for(String s : ans) {
 	    	answers[i++] = s;
 	    }
-	    
 	    return answers;
 	}
-
 
 	private static void findWords(String current,char[][] board, String[] words, int rows, int cols, int x, int y, boolean[][] visited,
 			Set<String> ans) {
@@ -54,8 +52,9 @@ public class Boggle {
 	            for (int jj = -1; jj <= 1; jj++)
 	            	findWords(current, board, words, rows, cols, x+ii, y+jj, visited, ans);
 
+	        //Now back track. Meaning mark this entry false because you are finally done exploring
+	        // all paths starting from this point.
 	        visited[x][y] = false;
-		
 	}
 
 
@@ -68,8 +67,7 @@ public class Boggle {
 		
 		String[] set = {"CODE", "SOLO", "RULES", "COOL"};
 		
-		wordBoggle(board, set);
-		
+		String ans[] = wordBoggle(board, set);
+		Arrays.stream(ans).forEach(System.out::println);
 	}
-
 }

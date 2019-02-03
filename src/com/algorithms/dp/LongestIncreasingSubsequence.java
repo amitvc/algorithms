@@ -28,7 +28,7 @@ public class LongestIncreasingSubsequence {
         // case 2: include the current element if it is smaller
         // than previous element in LDS
         int incl = 0;
-        if (arr[i] < prev)
+        if (arr[i] > prev)
             incl = 1 + LDS(arr, i + 1, n, arr[i]);
 
         // case 1: exclude the current element and process the
@@ -84,7 +84,7 @@ public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         int arr[] = { 0, 8, 4, 12, 2 };
-        System.out.println(LDS(arr, 0, arr.length, Integer.MAX_VALUE));
+        System.out.println(LDS(arr, 0, arr.length, Integer.MIN_VALUE));
         int arrs[] = { 0, 8, 4, 12, 2 };
         System.out.println(lengthOfLIS(arrs));
         System.out.println(lengthOfLISBU(arr));

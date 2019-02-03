@@ -24,9 +24,8 @@ public class StringSubsequence {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<String> cache = new ArrayList<>();
-		StringSubsequence.printSubSequence("abc", cache );
+		printSubSequence("abc", cache );
 		System.out.println(cache);
-		System.out.println("size "+ cache.size());
 	}
 
 }

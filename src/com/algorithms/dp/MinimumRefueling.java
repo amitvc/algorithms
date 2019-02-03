@@ -22,35 +22,34 @@ public class MinimumRefueling {
     }
 	
 	
-	public static int minRefuelStopss(int target, int startFuel, int[][] stations) {
-        int len = stations.length;
-        long[] dp = new long[len + 1];
+	public static int minRefuelStopsDp(int target, int startFuel, int[][] s) {
+		
+        long[] dp = new long[s.length + 1];
         dp[0] = startFuel;
-        for (int i = 0; i < len; i++) {
-            for (int j = i + 1; j > 0 && dp[j - 1] >= stations[i][0]; j--) {
-                dp[j] = Math.max(dp[j], dp[j - 1] + stations[i][1]);
-            }
-        }
-        for (int i = 0; i <= len; i++) {
-            if (dp[i] >= target) {
-                return i;
-            }
-        }
+        for (int i = 0; i < s.length; ++i)
+            for (int t = i; t >= 0 && dp[t] >= s[i][0]; --t)
+                dp[t + 1] = Math.max(dp[t + 1], dp[t] + s[i][1]);
+        for (int t = 0; t <= s.length; ++t)
+            if (dp[t] >= target) return t;
         return -1;
     }
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int stations[][] = {
 				{10,60},
 				{20,20},
-				{30,10},
+				{30,30},
 				{60,40}
 		};
 		
-		int minRefuel = minRefuelStopss(100, 10, stations);
+		
+		int minRefuel = minRefuelStopsDp(100, 10, stations);
 		System.out.println("Min Refuel " + minRefuel);
 		
-
+		minRefuel = minRefuelStops(100, 10, stations);
+		System.out.println("Min Refuel " + minRefuel);
 	}
 
 }

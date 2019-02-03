@@ -11,7 +11,7 @@ public class SmallestRange {
 				return a.val - b.val;
 			}
 		});
-		int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+		int max = Integer.MIN_VALUE;
 		for (int i = 0; i < nums.length; i++) {
 			Element e = new Element(i, 0, nums[i][0]);
 			pq.offer(e);

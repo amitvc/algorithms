@@ -115,9 +115,12 @@ public class CoinsProblem {
 	public static void main(String[] args) {
 		int[] coins = { 1, 5,10 };
 		int[] coins2 = { 1, 2, 5};
+		calculateMinCoins(coins,13);
 		System.out.println(minCoins(coins, 15));
 		System.out.println("BottomUpMinCoins " + calculateMinCoins(coins, 15));
 		System.out.println(change(5,coins2));
+		System.out.println("BottomUpMinCoins " + minimumCoinBottomUp(9,coins2));
+
 
 	}
 

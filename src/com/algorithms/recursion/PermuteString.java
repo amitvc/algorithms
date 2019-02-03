@@ -2,8 +2,8 @@ package com.algorithms.recursion;
 
 public class PermuteString {
 	
-	public static void permute(String orginal) {
-		permute("", orginal);
+	public static void permute(String original) {
+		permute("", original);
 	}
 	
 	public static void permute(String current, String remaining) {
@@ -24,5 +24,4 @@ public class PermuteString {
 	public static void main(String[] args) {
 		permute("abc");
 	}
-
 }
