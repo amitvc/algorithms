@@ -38,8 +38,26 @@ public class CoinsProblem {
 				res = Math.min(1+minCoins(coins, V-coin), res);				
 			}
 		}
-
 		return res;
+	}
+
+	public static int minCoinsRec(int [] coins, int amount) {
+
+		if(amount == 0) {
+			return 0;
+		}
+
+		int result = Integer.MAX_VALUE;
+
+
+		for(int i=0; i < coins.length; i++) {
+
+			if (amount >= coins[i]) {
+				result =  Math.min(result, 1+minCoinsRec(coins, amount - coins[i]));
+			}
+		}
+
+		return result;
 	}
 	
 	/**
@@ -113,10 +131,12 @@ public class CoinsProblem {
     }
 
 	public static void main(String[] args) {
-		int[] coins = { 1, 5,10 };
+		int[] coins = { 1, 5,6 };
 		int[] coins2 = { 1, 2, 5};
 		calculateMinCoins(coins,13);
-		System.out.println(minCoins(coins, 15));
+		System.out.println(minCoins(coins, 13));
+		System.out.println(minCoinsRec(coins, 13));
+
 		System.out.println("BottomUpMinCoins " + calculateMinCoins(coins, 15));
 		System.out.println(change(5,coins2));
 		System.out.println("BottomUpMinCoins " + minimumCoinBottomUp(9,coins2));

@@ -1,46 +1,45 @@
 package com.algorithms.trees;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MarkCousins {
 	public static class Node {
-		private int data;
+		private String data;
 		public Node left;
 		public Node right;
-		public List<Integer> cousins;
+		public List<String> neighbors;
 
-		public Node(int v) {
+		public Node(String v) {
 			this.data = v;
-			cousins = new ArrayList<>();
+			neighbors = new ArrayList<>();
 		}
 	}
 
 
-	public void dfs(Node r, int level, Map<Integer, List<Integer>> cousins) {
+	public void traverse(Node r, int level, Map<Integer, List<String>> neighborhoodMap) {
 		if(r == null) {
 			return;
 		}
 
-		if(!cousins.containsKey(level)) {
-			cousins.put(level, new ArrayList<>());
+		if(!neighborhoodMap.containsKey(level)) {
+			neighborhoodMap.put(level, new ArrayList<>());
 		}
-		List<Integer> current = cousins.get(level);
-		r.cousins.addAll(current);
+		List<String> current = neighborhoodMap.get(level);
+		r.neighbors.addAll(current);
 		current.add(r.data);
 		int nextLevel = level+1;
-		dfs(r.right, nextLevel, cousins);
-		dfs(r.left, nextLevel,cousins);
+		traverse(r.right, nextLevel, neighborhoodMap);
+		traverse(r.left, nextLevel,neighborhoodMap);
 	}
 
 
-	public void markCousins(Node root) {
-		dfs(root, 0, new HashMap<Integer, List<Integer>>());
-		System.out.println(root);
+	public void findNeighbors(Node root) {
+		traverse(root, 0, new HashMap<Integer, List<String>>());
 	}
+
+
+
 
 	/**
 	 *                      75
@@ -58,36 +57,30 @@ public class MarkCousins {
 
 
 	public static void main(String args[]) {
-		Node root = new Node(75);
-		Node n50 = new Node(50);
-		Node n100 = new Node(100);
-		Node n45 = new Node(45);
-		Node n60 = new Node(60);
-		Node n80 = new Node(80);
-		Node n120 = new Node(120);
+		Node root = new Node("Alan");
+		Node lori = new Node("lori");
+		Node vera = new Node("vera");
+		Node bob = new Node("bob");
+		Node troy = new Node("troy");
+		Node jim = new Node("jim");
+		Node ken = new Node("ken");
 
-		Node n30 = new Node(30);
-		Node n48= new Node(48);
-		Node n61 = new Node(61);
+		Node nancy = new Node("nancy");
 
 
-		root.left = n50;
-		root.right = n100;
+		root.left = lori;
+		root.right = vera;
+		lori.left = bob;
+		bob.left = ken;
 
-		n50.left = n45;
-		n50.right = n60;
+		vera.left = troy;
+		vera.right = jim;
 
-		n100.left = n80;
-		n100.right = n120;
-
-		n45.right = n48;
-		n45.left = n30;
-
-		n60.right = n61;
+		jim.right = nancy;
 
 		MarkCousins m = new MarkCousins();
-		m.markCousins(root);
-
+		m.findNeighbors(root);
+		System.out.println(root);
 	}
 
 
