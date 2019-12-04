@@ -23,15 +23,17 @@ public class Queens2D {
 	}
 	
 	public static void queens(int a[][], int row, int column) {
+		if(row == 4) {
+			print(a);
+			System.out.println("-------------");
+			return;
+		}
+
 		for(int i=0; i < column; i++) {
 			if(safe(row, i, a)) {
 				a[row][i] = 1;
-				if(row == column-1) {
-					print(a);
-				} else {
-					queens(a, row+1, column);
-					a[row][i] = 0;
-				}
+				queens(a, row+1, column);
+				a[row][i] = 0;
 			}
 		}
 	

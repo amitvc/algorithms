@@ -1,5 +1,7 @@
 package com.algorithms.dp;
 
+import java.util.Map;
+
 public class MinimumJump {
 	
 	public static int minJumps(int arr[], int l, int h)
