@@ -30,11 +30,17 @@ public class PrintArraySubSets {
 			System.out.println("List --------> "+ list.toString());
 			return;
 		}
-		printAllSubSets(arr, i+1, list);
+		/*printAllSubSets(arr, i+1, list);
 		int currentElement = arr[i];
-		list.push(currentElement);		
-		printAllSubSets(arr,i+1, list);		
+		list.push(currentElement);
+		printAllSubSets(arr,i+1, list);
+		list.pop();*/
+
+		int current = arr[i];
+		list.push(current);
+		printAllSubSets(arr,i+1, list);
 		list.pop();
+		printAllSubSets(arr, i+1, list);
 	}
 	
 	private static void printAllSubSets(char[] arr, int i, Stack<Character> list) {
@@ -56,9 +62,7 @@ public class PrintArraySubSets {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int arr[] = {1,2,3};
-		char arrc[] = {'a', 'b','c'};
 		printAllSubSets(arr);
-		printAllSubSets(arrc);
 	}
 
 }

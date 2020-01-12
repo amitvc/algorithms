@@ -27,7 +27,7 @@ public class Graph {
 	
 	public void addEdge(int source, int destination) {
 		nodes[source].add(destination);
-		//nodes[destination].add(source);
+		nodes[destination].add(source);
 		edgeCount++;
 	}
 	

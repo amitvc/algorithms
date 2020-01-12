@@ -3,6 +3,7 @@ package com.algorithms.arrays;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class QuickSort {
 
@@ -47,26 +48,18 @@ public class QuickSort {
 		
 	}
 	
-	// pe = 8
-	//8,3,4,6,1,90,2
-	 public static void quickSort(int arr[]) {
-	        qs(arr, 0, arr.length);
-	   
-	 }
-	
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Integer [] arr = {2,6,8,5,4,3};
-		Arrays.sort(arr, Collections.reverseOrder());
-		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
-		pq.offer(5);
-		pq.offer(3);
-		pq.offer(100);
-		System.out.println("Min pq : "+ pq.poll());
-		
-		//qs(arr,0, arr.length-1);
-        Arrays.stream(arr).forEach(System.out::println);
+//		int arr[] = new int[500000000];
+//		for(int i=0; i < arr.length; i++) {
+//			arr[i] = ThreadLocalRandom.current().nextInt(0,500000000);
+//		}
+		long st = System.currentTimeMillis();
+		System.out.println("Starting ");
+		int arr1[] = {5,4,8,9,2,81,3};
+		qs(arr1, 0, arr1.length-1);
+		System.out.println("Ended " + (System.currentTimeMillis() - st) / 1000);
 
 	}
 

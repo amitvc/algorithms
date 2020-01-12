@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Boggle {
+public class 	Boggle {
 
 	
 	public static Map<String, String> dictionary = new HashMap<>();
@@ -60,8 +60,6 @@ public class Boggle {
 		char board[][] = {{'G','I','Z'},
 							{'U','E','K'},
 							{'Q','S','E'}};
-		
 		findBoggle(board);
 	}
-
 }

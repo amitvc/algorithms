@@ -1,5 +1,6 @@
 package com.algorithms.dp;
 
+import java.util.Arrays;
 import java.util.Map;
 
 public class MinimumJump {
@@ -69,11 +70,34 @@ public class MinimumJump {
         return steps ;
     }
 
+    public static int minJumpBottomUp(int arr[]) {
+
+	    if (arr.length == 1) {
+	        return 0;
+        }
+
+	    int dp[] = new  int[arr.length];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+
+	    dp[0] = 0;
+
+	    for (int i=1; i < arr.length; i++) {
+	        for(int j=0; j < i; j++) {
+	            if (arr[j] + j >= i) {
+	                dp[i] = Math.min(dp[i], dp[j] +1);
+                }
+            }
+        }
+
+	    return dp[arr.length-1];
+
+    }
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int arr[] = {50, 4,3,7,1 ,2,6,7,6,10};
-		System.out.println(jump(arr));
+		int arr[] = {3,1,3,1,1,0};
+		System.out.println(minJumpBottomUp(arr));
 	}
 
 }

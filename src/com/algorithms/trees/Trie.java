@@ -64,6 +64,11 @@ public class Trie {
 		// TODO Auto-generated method stub
 		Trie t = new Trie();
 		t.insert("lee");
+		t.insert("leed");
+		t.insert("lead");
+		t.insert("leads");
+		t.insert("leader");
+		System.out.println(t);
 	}
 
 }
