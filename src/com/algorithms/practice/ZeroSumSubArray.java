@@ -37,7 +37,6 @@ public class ZeroSumSubArray {
 		System.out.println(ZeroSumSubArray.subArrayZeroSum(arr).toString());
 		System.out.println(ZeroSumSubArray.subArrayZeroSum(negArr).toString());
 		System.out.println(ZeroSumSubArray.subArrayZeroSum(arr1).toString());
-
 	}
 
 }

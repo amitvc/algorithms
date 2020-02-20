@@ -20,7 +20,30 @@ public class LetterCombinations {
 			put('9', "wxyz");
 		}
 	};
-	
+
+
+	public static void formDigits(String s) {
+
+		List<String> result = new ArrayList<>();
+		for (int i=0; i < s.length(); i++) {
+			char c = s.charAt(i);
+
+			String code = map.get(c);
+
+			List<String> temp = new ArrayList<>();
+
+			for (int j=0; j < code.length(); j++) {
+				if (result.isEmpty()) {
+					temp.add(""+code.charAt(j));
+				} else {
+					for (String t : result) {
+						temp.add(t+""+code.charAt(j));
+					}
+				}
+			}
+			result = temp;
+		}
+	}
 	
 	
 	// 234
@@ -162,5 +185,6 @@ public class LetterCombinations {
 		letters("234", 0, "", values);
 		//LetterCombinations.backtracking("234", 0, values, "");
 		System.out.println(values);
+		formDigits("234");
 	}
 }

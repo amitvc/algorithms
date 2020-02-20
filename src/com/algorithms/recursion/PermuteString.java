@@ -66,7 +66,7 @@ public class PermuteString {
 	}
 
 	public static void main(String[] args) {
-		//permute("abc");
+		permute("abc");
 		List<String> r = permuteString("LSE");
 		System.out.println("Result "+ r);
 

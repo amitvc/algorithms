@@ -14,7 +14,7 @@ public class MergeSort {
        if(si >= ei) {
          return;
        }
-       int mid = (si+ei)/2;
+       int mid =  si + (ei-si)/2;
        sort(input,aux, si, mid);
        sort(input, aux, mid+1, ei);
        merge(input, aux, si, ei, mid);
@@ -43,7 +43,7 @@ public class MergeSort {
     }
     
     public static void main(String args[]) {
-    	int arr[] = {2,6,8,5,4,3,35};
+    	int arr[] = {2,16,8,5,4,32,35,30,100,10,-3,103,440,567,1024,-123,1034,59602,4405,194};
     	mergeSort(arr);
         Arrays.stream(arr).forEach(System.out::println);
     }

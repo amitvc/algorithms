@@ -16,11 +16,11 @@ public class MatrixChainMultiplication {
     public static int minMatMult(int arr[], int cache[][], int i, int j) {
         if (i==j) return 0;
 
-        if (cache[i][j] != -1) {
-            System.out.println("Overlapping");
+        //if (cache[i][j] != -1) {
+          //  System.out.println("Overlapping");
             //return cache[i][j];
-        }
-
+        //}
+        System.out.println(" I "+ i + " J "+j);
 
         int min = Integer.MAX_VALUE;
 

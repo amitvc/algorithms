@@ -40,7 +40,7 @@ class LongestPalindromicString {
 
             if(s.charAt(l) != s.charAt(r)) {
 
-                return s.substring(l+1, r);
+                return s.substring(l+1, r); // return l+1 because we don't want to include character at l and since substring excludes char at r we don't have to do r-1
             } else {
 
                 l--;
@@ -54,7 +54,7 @@ class LongestPalindromicString {
 
     public static void main(String[] args) {
         LongestPalindromicString s = new LongestPalindromicString();
-        String result = s.getPalindrome("bbaabbc");
+        String result = s.getPalindrome("cbbaabbc");
         System.out.println("Result " + result);
     }
 }

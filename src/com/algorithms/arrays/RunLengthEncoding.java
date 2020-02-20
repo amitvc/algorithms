@@ -8,7 +8,7 @@ public class RunLengthEncoding {
 		StringBuilder sb = new StringBuilder();
 		while(currentIndex <= chars.length-1) {
 			char c = chars[currentIndex];
-			sb.append(c);
+
 			int charCount = 1;
 			int nextPtr;
 			for(nextPtr = currentIndex+1; (nextPtr < chars.length && c == chars[nextPtr] ); nextPtr++) {
@@ -18,6 +18,7 @@ public class RunLengthEncoding {
 			if(charCount > 1) {
 				sb.append(charCount);
 			}
+			sb.append(c);
 		}
 		System.out.println(sb.toString());
 		return sb.length();

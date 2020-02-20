@@ -146,7 +146,8 @@ public class DecodeString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DecodeString ds = new DecodeString();
-		System.out.println(ds.decodeString("3[a2[bc]]"));
+		String s;
+		System.out.println(ds.decodeString("37[a2[bc]]"));
 		System.out.println(decodeStringRec("3[a2[bc]]"));
 		decode("3[a2[bc]]");
 		decode("3[b]2[ca]");

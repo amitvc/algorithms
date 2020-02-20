@@ -3,7 +3,7 @@ package com.algorithms.recursion;
 public class GenerateParenthesis {
 
 	public static void generate(int n) {
-		generate(3, 0, 0, "");
+		generate(n, 0, 0, "");
 	}
 
 
@@ -37,7 +37,7 @@ public class GenerateParenthesis {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		generate(3);
+		generate(4);
 	}
 
 }

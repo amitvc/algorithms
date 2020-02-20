@@ -7,7 +7,7 @@ public class KnapSack {
 			return 0;
 		} else {
 			if(currentWeight < weights[i]) {
-				return knapSack(currentWeight, weights, value, i+1);
+				return knapSack(currentWeight, weights, value, i+1); //dont include this item since it exceeds the capacity.
 			} else {
 				return Math.max(value[i] + knapSack(currentWeight- weights[i], weights, value, i+1), 
 						knapSack(currentWeight, weights, value, i+1));
@@ -31,14 +31,43 @@ public class KnapSack {
 		return dp[value.length][maxWeight];
 	}
 
+
+	public static int maxValue(int weights[], int value[], int capacity) {
+
+		int dp[][] = new int[weights.length+1][capacity+1];
+
+
+		for(int i=0; i <= weights.length; i++) {
+
+			for(int w=0; w <= capacity; w++) {
+
+				if(i ==0 || w == 0) {
+
+					dp[i][w] = 0;
+				} else if (weights[i-1] <= w) {
+						dp[i][w] = Math.max(value[i-1] + dp[i-1][w - weights[i-1]], dp[i-1][w]);
+					} else {
+					  dp[i][w] = dp[i-1][w];
+				}
+
+			}
+		}
+
+
+		return dp[weights.length][capacity];
+
+	}
+
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int val[] = new int[]{600, 100, 720};
-        int wt[] = new int[]{10, 20, 30};
-        int  W = 30;
-        System.out.println(knapSack(W, wt, val, 0));
-        System.out.println(bottomUpKnapSack(W, wt, val));
-
+		int val[] = new int[]{1, 10, 12};
+        int wt[] = new int[]{1, 2, 3};
+        int  W = 5;
+		maxValue(wt, val, W);
+		bottomUpKnapSack(W, wt, val);
+		System.out.println(knapSack(3,wt, val,0));
 	}
 
 }

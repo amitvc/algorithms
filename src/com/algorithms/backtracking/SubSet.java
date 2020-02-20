@@ -73,8 +73,8 @@ public class SubSet {
 	         if(j<set[i-1]) 
 	         subset[i][j] = subset[i-1][j]; 
 	         if (j >= set[i-1]) 
-	           subset[i][j] = subset[i-1][j] ||  
-	                                 subset[i - 1][j-set[i-1]]; 
+	           subset[i][j] = subset[i-1][j] ||  // exclude
+	                                 subset[i - 1][j-set[i-1]];  // include
 	       } 
 	     } 
 	   
@@ -108,10 +108,10 @@ public class SubSet {
 		int a[] = { 1,2,5 };
 		// System.out.println(sum(a, a.length, 35));
 
-		//System.out.println(recSubset(a, 3, 0, 0,""));
+		System.out.println(recSubset(a, 13, 0, 0,""));
 
 		//System.out.println("isSubset " + isSubsetSum(a, a.length, 4));
-		isSubsetSums(a, 3, 6);
+		isSubsetSums(a, a.length, 6);
 //		printInteger(1425);
 //		System.out.println("\n" + digitSum(999121221));
 	}

@@ -91,7 +91,5 @@ public class LRUCache {
 		System.out.println("\n  1-->"+cache.get(1));
 		System.out.println("\n  3-->"+cache.get(3));
 		System.out.println("\n  4-->"+cache.get(4));
-
-
 	}
 }
