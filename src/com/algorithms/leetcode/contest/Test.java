@@ -1,12 +1,5 @@
 package com.algorithms.leetcode.contest;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
-
-import com.sun.xml.internal.ws.wsdl.parser.InaccessibleWSDLException;
-
 public class Test {
 
 	

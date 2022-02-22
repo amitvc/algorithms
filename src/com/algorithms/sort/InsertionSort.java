@@ -2,8 +2,6 @@ package com.algorithms.sort;
 
 import java.util.Random;
 
-import com.sun.media.sound.Toolkit;
-
 public class InsertionSort {
 
 	

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class represents a basic undirected graph as adjency list.
+ * Class represents a basic undirected graph as adjacency list.
  * 
  * @author amit
  *
