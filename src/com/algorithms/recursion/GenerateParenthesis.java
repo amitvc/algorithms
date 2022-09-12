@@ -21,7 +21,6 @@ public class GenerateParenthesis {
 		if (right < left) {
 			generate(n, left, right+1, current+")");
 		}
-
 	}
 
 
@@ -37,7 +36,7 @@ public class GenerateParenthesis {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		generate(4);
+		generate(3);
 	}
 
 }

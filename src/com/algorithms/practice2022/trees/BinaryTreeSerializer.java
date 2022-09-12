@@ -11,7 +11,7 @@ public class BinaryTreeSerializer {
     public static BinaryTreeNode deserializeTree(String data) {
         String tokens[] = data.split(",");
         Queue<String> queue = new ArrayDeque<String>();
-        Arrays.stream(tokens).forEach(e -> queue.offer(e));
+        Arrays.stream(tokens).forEach(queue::offer);
 
         return deserializeTree(queue);
     }

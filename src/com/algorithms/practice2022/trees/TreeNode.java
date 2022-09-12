@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class TreeNode {
     private final int value;
+    private List<TreeNode> neighbors;
 
     @Override
     public boolean equals(Object o) {
@@ -20,7 +21,7 @@ public class TreeNode {
         return Objects.hash(value);
     }
 
-    private List<TreeNode> neighbors;
+
     public TreeNode(int value) {
         this.value = value;
         this.neighbors = new ArrayList<>();
@@ -37,8 +38,6 @@ public class TreeNode {
     public int getValue() {
         return this.value;
     }
-
-
 
     public boolean isLeafNode() {
         return neighbors.isEmpty();

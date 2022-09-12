@@ -9,7 +9,7 @@ public class DecodeString {
         return helper(s);
     }
     
-    public static String helper( String s) {
+    public static String helper(String s) {
         int num=0;
         String word = "";
         for(;pos<s.length(); pos++) {

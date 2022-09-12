@@ -1,7 +1,5 @@
 package com.algorithms.trees;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Stack;
 
 public class InOrderTraversal {
@@ -13,27 +11,30 @@ public class InOrderTraversal {
         
         Stack<Node> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
-        Node c = root;
+        Node current = root;
         while(true) {
 
-            while(c != null) {
-                stack.push(c);
-                c = c.left;
+            while(current != null) {
+                stack.push(current);
+                current = current.left;
             }
 
             if (stack.isEmpty()) break;
-            c = stack.pop();
-            sb.append(c.data +",");
-            c = c.right;
+            current = stack.pop();
+            sb.append(current.data +",");
+            current = current.right;
         }
 
-        System.out.println("In Order " + sb.toString());
+        System.out.println("In Order " + sb);
     }
-    
+
+
+
+
     
     public static void main(String[] args) {
 
-        Node r = BinaryTreeProvider.getTree("1,2,4,#,9,11,12,#,#,#,10,#,#,3,6,#,#,7,#,#");
+        Node r = BinaryTreeProvider.getTree("100,50,25,#,#,75,65,#,#,85,#,#,120,110,#,#,130,#,#");
         inOrderIterative(r);
     }
 }

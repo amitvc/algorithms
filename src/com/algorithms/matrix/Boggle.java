@@ -29,12 +29,10 @@ public class Boggle {
 			Set<String> ans) {
 		  if (x < 0 || y < 0 || x >= rows || y >= cols) return;
 	        
-
 	        // can't visited a cell more than once
 	        if (visited[x][y]) return;
 
 	        // key to efficiency of backtracking algorithm
-
 	        // not allowed to reuse a letter
 	        visited[x][y] = true;
 

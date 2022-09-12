@@ -33,7 +33,7 @@ public class ConnectedComponent {
     }
 
     public static void main(String[] args) {
-        Graph g  = new UndirectedGraph();
+        Graph<Integer> g  = new UndirectedGraph();
         g.addEdge(0,1);
         g.addEdge(0,5);
         g.addEdge(0,2);

@@ -20,7 +20,10 @@ public class ParenthesesScore {
 
 
     public static void main(String[] args) {
+        // ((())) = 4
+        // ((())
         System.out.println("Score " + scoreOfParentheses("(()(())())()"));
+        System.out.println("Score " + scoreOfParentheses("((()))"));
     }
 
 }
